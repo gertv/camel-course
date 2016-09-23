@@ -19,13 +19,20 @@ import org.apache.camel.builder.RouteBuilder;
 
 public class OrderRoute extends RouteBuilder {
 
+    private final OrderService service;
+
+    public OrderRoute(OrderService service) {
+        super();
+        this.service = service;
+    }
+
     @Override
     public void configure() throws Exception {
 
         from("file:src/main/resources/orders?noop=true")
                 .to("file:target/audit")
-                .beanRef("orderService", "enrich")
-                .beanRef("orderService","process")
+                .bean(service, "enrich")
+                .bean(service, "process")
                 .to("direct:order");
     }
 

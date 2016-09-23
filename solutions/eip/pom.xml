@@ -23,9 +23,9 @@
 
   <groupId>be.anova.course.camel</groupId>
   <artifactId>eip</artifactId>
-  <packaging>jar</packaging>
+  <packaging>bundle</packaging>
 
-  <name>Camel Course :: Enterprise Integration Pattern Excercises</name>
+  <name>Camel Course :: EIP Excercises</name>
   <url>http://www.anova.be</url>
 
 </project>

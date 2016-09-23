@@ -34,7 +34,7 @@ public class OrderRoute extends RouteBuilder {
                 .convertBodyTo(String.class).to("direct:qty").to("log:order");
         
         from("direct:qty")
-            .choice().when().xpath("//order/articles/article/quantity='0'")
+            .choice().when().xpath("sum(//order/articles/article/quantity)=0")
             .to("log:empty-orders")
             .otherwise().to("direct:order");
 

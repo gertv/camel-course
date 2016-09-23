@@ -22,10 +22,13 @@ limitations under the License.
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
   
   <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
-    <camel:package>be.anova.course.camel.beans</camel:package>
+    <camel:routeBuilder ref="orderRoute"/>
   </camel:camelContext>
 
-  <bean id="orderService" class="be.anova.course.camel.beans.OrderService" /> 
-  
+  <bean id="orderRoute" class="be.anova.course.camel.beans.OrderRoute">
+    <constructor-arg ref="orderService"/>
+  </bean>
+
+  <bean id="orderService" class="be.anova.course.camel.beans.OrderService" />
 
 </beans>

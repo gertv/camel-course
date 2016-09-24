@@ -19,6 +19,13 @@ import org.apache.camel.builder.RouteBuilder;
 
 public class OrderRoute extends RouteBuilder {
 
+    private final OrderService service;
+
+    public OrderRoute(OrderService service) {
+        super();
+        this.service = service;
+    }
+
     @Override
     public void configure() throws Exception {
         //TODO: implement your Camel routes here if you prefer the Java DSL

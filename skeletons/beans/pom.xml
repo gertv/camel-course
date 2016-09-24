@@ -28,7 +28,7 @@
 
 	<groupId>be.anova.course.camel</groupId>
 	<artifactId>beans</artifactId>
-	<packaging>jar</packaging>
+	<packaging>bundle</packaging>
 
 	<name>Camel Course :: Beans Excercise</name>
 	<url>http://www.anova.be</url>

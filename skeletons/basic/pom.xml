@@ -29,7 +29,7 @@
 
   <groupId>be.anova.course.camel</groupId>
   <artifactId>basic</artifactId>
-  <packaging>jar</packaging>
+  <packaging>bundle</packaging>
 
   <name>Camel Course :: Basic Excercises</name>
   <url>http://www.anova.be</url>

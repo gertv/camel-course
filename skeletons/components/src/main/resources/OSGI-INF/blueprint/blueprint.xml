@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <camelContext xmlns="http://camel.apache.org/schema/blueprint">
+        <package>be.anova.course.camel.components</package>
+    </camelContext>
+
+    <bean id="jms" class="org.apache.activemq.camel.component.ActiveMQComponent">
+        <property name="configuration">
+            <bean class="org.apache.activemq.camel.component.ActiveMQConfiguration">
+                <property name="brokerURL" value="tcp://localhost:61616" />
+                <property name="userName" value="smx" />
+                <property name="password" value="smx" />
+            </bean>
+        </property>
+    </bean>
+
+</blueprint>

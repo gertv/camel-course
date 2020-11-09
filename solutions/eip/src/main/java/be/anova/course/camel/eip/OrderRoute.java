@@ -39,8 +39,8 @@ public class OrderRoute extends RouteBuilder {
             .otherwise().to("direct:order");
 
         from("direct:order")
-                .setHeader("externalid",xpath("/order/@externalid"))
-                .setHeader(Exchange.FILE_NAME,simpleExpression("${header.externalid}.xml"))
+                .setHeader("externalid", xpath("/order/@externalid"))
+                .setHeader(Exchange.FILE_NAME, xpath("concat(/order/@externalid, '.xml')", String.class))
                 .choice().when().xpath("//order/customer/@country='Scotland'")
                 .to("file:target/orders/Scotland")
                 .when().xpath("//order/customer/@country='Belgium'")
